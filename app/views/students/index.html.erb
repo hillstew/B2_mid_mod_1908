@@ -1,0 +1,15 @@
+<h1>Students</h1>
+
+<% @students.each do |student| %>
+<section id="student-<%= student.id %>">
+  <h2><%= student.name %></h2>
+  <p><%= student.cohort %></p>
+  <p><%= student.age %></p>
+  <h3>Instructors</h3>
+  <section id="student-<%= student.id %>-instructors" >
+    <% student.instructors.each do |instructor| %>
+      <%= link_to "#{instructor.name}", "/instructors/#{instructor.id}" %>
+    <% end %>
+  </section>
+</section>
+<% end %>
